@@ -3,7 +3,7 @@
 ## Prerequisite
 
 - Follow the instruction of `Pytorch-YOLOv3/README.md` to download weights etc.
-- `python3 -m venv venv; source venv/bin/activate; pip install requirements.txt`
+- `python3 -m venv venv; source venv/bin/activate; pip install -r requirements.txt`
 
 ## Usage
 
