@@ -1,0 +1,16 @@
+<h1>分類結果</h1>
+<a href="{{ url_for('index') }}">Back</a><p>
+
+<h2>入力画像</h2>
+{% for file_url in file_urls %}
+<img style="height: 150px" src="{{ file_url }}">
+{% endfor %}
+
+<h2>分類結果</h2>
+{% for i, res in result %}
+<p>Result {{i}}: {{res['class']}} {{res['name']}} (Probability: {{res['probability']}})</p>
+<img style="height: 150px" src="images/{{res['class']}}.jpg">
+{% endfor %}
+
+
+    
