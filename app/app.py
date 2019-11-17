@@ -5,7 +5,7 @@ from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_cl
 
 import os
 
-app = Flask(__name__, static_folder='./images')
+app = Flask(__name__, static_folder='./static')
 dropzone = Dropzone(app)
 
 

@@ -1,0 +1,17 @@
+.app {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 500px;
+}
+.homepage_logo {
+    text-align: center;
+    padding: 20px 10px;
+    margin: auto;
+}
+.search_box {
+    text-align: center;
+    padding: 20px 0px;
+    margin: auto;
+    width: 100%;
+}
+

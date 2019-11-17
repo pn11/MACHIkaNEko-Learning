@@ -1,8 +1,18 @@
 # MACHIkaNEko Learning
 
-# Sub project
+This repository is dirty and not reusable. Works only in my environment.
+
+## Cat Detection
 
 - [`cat_detection`](cat_detection)
+
+## Cat Classification
+
+- [`train`](train)
+
+## Flask App
+
+- [`app`](app)
 
 ## Reference
 

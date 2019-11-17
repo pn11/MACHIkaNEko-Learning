@@ -1,16 +1,27 @@
-<h1>分類結果</h1>
-<a href="{{ url_for('index') }}">Back</a><p>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Results</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="static/css/legacy.css">
+        <link rel="stylesheet" href="static/css/style.css">
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    </head>
+    <body>
+      <div class="app">
+        <h1>分類結果</h1>
+        <a href="{{ url_for('index') }}">Back</a><p>
 
-<h2>入力画像</h2>
-{% for file_url in file_urls %}
-<img style="height: 150px" src="{{ file_url }}">
-{% endfor %}
+          <h2>入力画像</h2>
+          {% for file_url in file_urls %}
+          <img style="height: 150px" src="{{ file_url }}">
+          {% endfor %}
 
-<h2>分類結果</h2>
-{% for i, res in result %}
-<p>Result {{i}}: {{res['class']}} {{res['name']}} (Probability: {{res['probability']}})</p>
-<img style="height: 150px" src="images/{{res['class']}}.jpg">
-{% endfor %}
-
-
-    
+          <h2>分類結果</h2>
+          {% for i, res in result %}
+        <p>Result {{i}}: {{res['class']}} {{res['name']}} (Probability: {{res['probability']}})</p>
+        <img style="height: 150px" src="static/images/{{res['class']}}.jpg">
+        {% endfor %}
+      </div>
+    </body>
+</html>

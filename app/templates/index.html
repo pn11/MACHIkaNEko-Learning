@@ -4,10 +4,17 @@
         <title>MACHIkaNEko Learning</title>
         {{ dropzone.load() }}
         {{ dropzone.style('border: 2px dashed #0087F7; margin: 10%; min-height: 400px;') }}
+
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="static/css/legacy.css">
+        <link rel="stylesheet" href="static/css/style.css">
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     </head>
     <body>
-      <h1>MACHIkaNEko Learning</h1>
-      <p>画像を入力してください。</p>
+      <div class="app">
+        <h1>MACHIkaNEko Learning</h1>
+        <p>画像を入力してください。</p>
         {{ dropzone.create(action_view='index') }}
+      </div>
     </body>
 </html>
