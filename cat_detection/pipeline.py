@@ -48,7 +48,10 @@ if __name__ == '__main__':
        if cls_pred == 'cat':
           path, name, _  = fileparts(argv[1])
           label = path.split('/')[-1]
+          # create bounding box of cat
           res = subprocess.run(f"source venv/bin/activate; python create_cat_bb.py {argv[1]} output/{label}-{id_}-{name}.png {x1} {y1} {x2} {y2}", capture_output=True, shell=True)
+          # resize image
+          res = subprocess.run(f"source venv/bin/activate; python resize_image.py output/{label}-{id_}-{name}.png output/resized-{label}-{id_}-{name}.png 224", capture_output=True, shell=True)
           id_ += 1
        else:
           logging.info(f'{cls_pred} detected')

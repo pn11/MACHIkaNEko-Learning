@@ -1,6 +1,6 @@
 # MACHIkaNEko Learning
 
-This repository is dirty and not reusable. Works only in my environment.
+This repository is dirty and not reusable. Works only in author's environment.
 
 ## Cat Detection
 
