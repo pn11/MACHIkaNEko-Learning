@@ -7,6 +7,8 @@ num_classes = 19
 
 # モデル定義
 model = make_model('vgg16', num_classes=num_classes, pretrained=True, input_size=(224, 224))
+device = torch.device('cuda')
+model = model.to(device)
 
 # パラメータの読み込み
 param = torch.load('cnn_dict.model')
@@ -16,13 +18,11 @@ model.load_state_dict(param)
 # 評価モードにする
 model = model.eval()
 
-
 test_set = train.MyDataSet('test_images.csv', '../cat_detection/output/test')
-
 test_loader = torch.utils.data.DataLoader(test_set, batch_size=32)
 
-
 from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
 
 pred = []
 Y = []
@@ -32,9 +32,11 @@ labels = [4, 7, 11, 18, 26,
           74, 81, 91, 96]
 
 for i, (x,y) in enumerate(test_loader):
+    x, y = x.to(device), y.to(device)
     with torch.no_grad():
         output = model(x)
     pred += [labels[int(l.argmax())] for l in output]
     Y += [labels[int(l)] for l in y]
     
 print(classification_report(Y, pred))
+print(confusion_matrix(Y, pred))

@@ -23,7 +23,6 @@ learning_rate = 0.001
 
 def prepare_model():
     # cnn_futureを使う場合
- #   model = make_model(model_name, num_classes=num_classes, pretrained=True, input_size=(224, 224))
     model = make_model(model_name, num_classes=num_classes, pretrained=False, input_size=(224, 224))
     # pretrainedmodelsを使う場合
 #    model = pretrainedmodels.__dict__[model_name](num_classes=num_classes, pretrained='imagenet')
