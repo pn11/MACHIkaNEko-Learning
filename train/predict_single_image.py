@@ -44,3 +44,7 @@ with torch.no_grad():
 
     for ind in top4_label[0].tolist():
         print(f"{labels[ind]}: {probs[0][ind]*100} %")
+
+    with open("predict_single_result.tsv", "w") as fw:
+        for ind in top4_label[0].tolist()[:3]:
+            fw.write(f"{labels[ind]}\t{probs[0][ind]*100}%\n")

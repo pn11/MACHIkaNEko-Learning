@@ -14,13 +14,22 @@
 
           <h2>入力画像</h2>
           {% for file_url in file_urls %}
-          <img style="height: 150px" src="{{ file_url }}">
+          <img align="center" style="height: 400px" src="{{ file_url }}">
           {% endfor %}
+
+          <h2>物体検出結果</h2>
+          <img align="center" style="height: 400px" src="static/images/detect_result.png">
+
+          <h3>物体検出結果</h3>
+          <img align="center" style="height: 200px" src="static/images/bb_result.png">
+
+          <h3>Resized</h3>
+          <img align="center" style="height: 200px" src="static/images/resized_result.png">
 
           <h2>分類結果</h2>
           {% for i, res in result %}
-        <p>Result {{i}}: {{res['class']}} {{res['name']}} (Probability: {{res['probability']}})</p>
-        <img style="height: 150px" src="static/images/{{res['class']}}.jpg">
+        <p>Result {{i+1}}: ID{{res['class']}} {{res['name']}} (Probability: {{res['probability']}})</p>
+        <img align="center" style="height: 224px" src="static/images/ref/{{res['class']}}.png">
         {% endfor %}
       </div>
     </body>
