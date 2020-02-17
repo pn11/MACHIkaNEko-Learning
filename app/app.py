@@ -63,11 +63,12 @@ def results():
     # set the file_urls and remove the session variable
     file_urls = session['file_urls']
     session.pop('file_urls', None)
+    # 複数画像には未対応
     for url in file_urls:
-        result = classify.classify(url)
+        detected, result = classify.classify(url)
         
     
-    return render_template('results.html', file_urls=file_urls, result=enumerate(result))
+    return render_template('results.html', file_urls=file_urls, result=enumerate(result), detected=detected)
 
 if __name__ == "__main__":
     app.run(port=9999, debug=True)

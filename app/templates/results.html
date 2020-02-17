@@ -18,13 +18,13 @@
           {% endfor %}
 
           <h2>物体検出結果</h2>
-          <img align="center" style="height: 400px" src="static/images/detect_result.png">
+          <img align="center" style="height: 400px" src="{{ detected['detect'] }}">
 
           <h3>物体検出結果</h3>
-          <img align="center" style="height: 200px" src="static/images/bb_result.png">
+          <img align="center" style="height: 200px" src="{{ detected['bb'] }}">
 
           <h3>Resized</h3>
-          <img align="center" style="height: 200px" src="static/images/resized_result.png">
+          <img align="center" style="height: 200px" src="{{ detected['resize'] }}">
 
           <h2>分類結果</h2>
           {% for i, res in result %}
