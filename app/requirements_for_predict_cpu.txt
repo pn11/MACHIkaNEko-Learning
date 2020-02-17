@@ -1,0 +1,1 @@
+../requirements_for_predict_cpu.txt
